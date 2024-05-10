@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="mt-4 mb-3">Calcular Cuadrado y Mitad</h2>
+  
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="calcularCuadradoMitad()">Calcular</button>
+      </div>
+    </div>
+  
+    <div class="row mt-3" *ngIf="cuadrados && mitades">
+      <div class="col-md-6">
+        <h3>Cuadrados:</h3>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let cuadrado of cuadrados">{{ cuadrado }}</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Mitades:</h3>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let mitad of mitades">{{ mitad }}</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row mt-3" *ngIf="!cuadrados || !mitades">
+      <div class="col-12">
+        <p class="alert alert-info">No se ha realizado ningún cálculo aún.</p>
+      </div>
+    </div>
+  </div>
+  

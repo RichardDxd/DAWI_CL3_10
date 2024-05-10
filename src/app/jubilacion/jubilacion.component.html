@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2>Verificar Jubilación</h2>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="edad" class="form-label">Edad:</label>
+          <input type="number" class="form-control" id="edad" [(ngModel)]="edad" name="edad" required>
+        </div>
+        <div class="mb-3">
+          <label for="sexo" class="form-label">Sexo:</label>
+          <select class="form-select" id="sexo" [(ngModel)]="sexo" name="sexo" required>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" (click)="verificarJubilacion()">Verificar</button>
+      </div>
+    </div>
+  
+    <div *ngIf="puedeJubilarse !== undefined" class="row mt-4">
+      <div class="col-md-6">
+        <div *ngIf="puedeJubilarse" class="alert alert-success" role="alert">
+          ¡Puede jubilarse!
+        </div>
+        <div *ngIf="!puedeJubilarse" class="alert alert-danger" role="alert">
+          No puede jubilarse.
+        </div>
+      </div>
+    </div>
+  </div>
+b  
