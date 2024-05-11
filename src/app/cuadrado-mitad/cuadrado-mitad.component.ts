@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule  } from '@angular/common';
-
+import {CommonModule} from '@angular/common'
 @Component({
   selector: 'app-cuadrado-mitad',
   standalone: true,
