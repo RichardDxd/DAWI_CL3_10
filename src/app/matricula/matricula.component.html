@@ -1,22 +1,11 @@
-<div class="container mt-4">
-  <h2>Calcular Costo de Matrícula</h2>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="mb-3">
-        <label for="numMaterias" class="form-label">Número de Materias:</label>
-        <input type="number" class="form-control" id="numMaterias" [(ngModel)]="numMaterias" name="numMaterias" required>
-      </div>
-      <button class="btn btn-primary" (click)="calcularCostoMatricula()">Calcular</button>
-    </div>
+<h2>Matrícula de Alumnos</h2>
+<form>
+  <div class="form-group">
+    <label for="numMaterias">Número de materias:</label>
+    <input type="number" class="form-control" id="numMaterias" name="numMaterias" [(ngModel)]="numMaterias" required>
   </div>
-
-  <div *ngIf="costoMatricula !== undefined" class="row mt-4">
-    <div class="col-md-6">
-      <div class="alert alert-info" role="alert">
-        El costo de matrícula es: S/ {{ costoMatricula | number:'1.2-2' }}
-      </div>
-    </div>
-  </div>
+  <button type="submit" class="btn btn-primary" (click)="calcularCosto()">Calcular</button>
+</form>
+<div *ngIf="costoTotal !== null">
+  <p>El costo total de la matrícula es: S/ {{ costoTotal }}</p>
 </div>
-

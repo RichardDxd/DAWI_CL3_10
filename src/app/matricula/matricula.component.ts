@@ -13,13 +13,17 @@ import { FormsModule } from '@angular/forms';
 export class MatriculaComponent {
   numMaterias!: number;
   costoMatricula!: number;
+  costoTotal!: number;
 
-  calcularCostoMatricula() {
+  calcularCosto() {
     const costoPorMateria = 520;
+    let costoSinDescuento = this.numMaterias * costoPorMateria;
+
     if (this.numMaterias > 5) {
-      this.costoMatricula = this.numMaterias * costoPorMateria * 0.9; // Aplicar descuento del 10% si hay más de 5 materias
-    } else {
-      this.costoMatricula = this.numMaterias * costoPorMateria;
+      const descuento = costoSinDescuento * 0.1;
+      costoSinDescuento -= descuento;
     }
+
+    this.costoTotal = costoSinDescuento;
   }
 }

@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './menor.component.html',
   styleUrl: './menor.component.scss'
 })
+
 export class MenorComponent {
   numeros: number[] = [];
   menor: number | undefined; // Variable para almacenar el número menor
+resultado: any;
+  
 
   // Función para calcular el número menor de los números ingresados
   calcularMenor() {
